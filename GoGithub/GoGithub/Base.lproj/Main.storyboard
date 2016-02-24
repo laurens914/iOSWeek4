@@ -1,14 +1,54 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="79H-hx-thY">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home View Controller-->
+        <scene sceneID="cvp-FL-TSh">
+            <objects>
+                <viewController storyboardIdentifier="HomeViewController" id="79H-hx-thY" customClass="HomeViewController" customModule="GoGithub" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="t8h-5n-k2y"/>
+                        <viewControllerLayoutGuide type="bottom" id="bKd-os-B9G"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="p1j-lq-IEV">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gim-un-y9b">
+                                <rect key="frame" x="239" y="285" width="122" height="30"/>
+                                <state key="normal" title="Print Repositories"/>
+                                <connections>
+                                    <action selector="repoButton:" destination="79H-hx-thY" eventType="touchUpInside" id="MgL-5H-Ojr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q8f-Eb-lPx">
+                                <rect key="frame" x="225" y="97" width="151" height="30"/>
+                                <state key="normal" title="Print User Information"/>
+                                <connections>
+                                    <action selector="userButton:" destination="79H-hx-thY" eventType="touchUpInside" id="RL9-5u-ajf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Gim-un-y9b" firstAttribute="centerY" secondItem="p1j-lq-IEV" secondAttribute="centerY" id="8Dj-5A-vTs"/>
+                            <constraint firstItem="Q8f-Eb-lPx" firstAttribute="top" secondItem="t8h-5n-k2y" secondAttribute="bottom" constant="77" id="QC8-ye-iYc"/>
+                            <constraint firstItem="Q8f-Eb-lPx" firstAttribute="centerX" secondItem="p1j-lq-IEV" secondAttribute="centerX" id="e2D-gq-dSb"/>
+                            <constraint firstItem="Gim-un-y9b" firstAttribute="centerX" secondItem="p1j-lq-IEV" secondAttribute="centerX" id="fdd-GX-wjm"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uLQ-0b-1Er" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-441" y="267"/>
+        </scene>
+        <!--Auth View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GoGithub" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="OAuthViewController" customModule="GoGithub" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -24,20 +64,11 @@
                                     <action selector="githubAuthorization:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lgX-7X-DKA"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BYF-Wk-s3p">
-                                <rect key="frame" x="261" y="513" width="78" height="30"/>
-                                <state key="normal" title="Print Token"/>
-                                <connections>
-                                    <action selector="printToken:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wa4-Fd-aFj"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="BYF-Wk-s3p" secondAttribute="bottom" constant="57" id="KSw-je-nC8"/>
                             <constraint firstItem="V6i-cI-thX" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ntr-Ff-MIr"/>
                             <constraint firstItem="V6i-cI-thX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vtZ-wy-5sC"/>
-                            <constraint firstItem="BYF-Wk-s3p" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wD7-lQ-9yW"/>
                         </constraints>
                     </view>
                 </viewController>

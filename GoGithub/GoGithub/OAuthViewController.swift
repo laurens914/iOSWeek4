@@ -8,7 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class OAuthViewController: UIViewController, Identity
+{
+    
+    class func id()-> String {
+        return String(OAuthViewController)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,12 +28,8 @@ class ViewController: UIViewController {
     }
     
     
-    @IBAction func printToken(sender: AnyObject) {
-        do {
-            let token = try GithubOAuth.shared.accessToken()
-             print(token)
-        }catch _ {}
-
+    override func prefersStatusBarHidden() -> Bool {
+        return true
     }
 
 }
