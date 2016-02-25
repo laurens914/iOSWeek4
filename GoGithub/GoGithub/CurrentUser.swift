@@ -14,12 +14,14 @@ class CurrentUser {
     var profileLink: String
     var avatarURL: String
     var email: String
+    var login: String
     
-    init(name: String, linkToRepos: String, profileLink: String, avatarURL: String, email: String) {
+    init(name: String, linkToRepos: String, profileLink: String, avatarURL: String, email: String, login: String) {
         self.name = name
         self.linkToRepos = linkToRepos
         self.profileLink = profileLink
         self.avatarURL = avatarURL
         self.email = email
+        self.login = login 
     }
 }

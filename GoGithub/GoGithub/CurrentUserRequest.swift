@@ -16,7 +16,7 @@ class GetCurrentUserRequest: APIRequest {
         return "https://api.github.com/user"
     }
     
-    func queryStringParam() -> [String : String]? {
+    func queryStringParameters() -> [String : String]? {
         do {
             let token = try GithubOAuth.shared.accessToken()
             return ["access_token": token]

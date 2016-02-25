@@ -12,7 +12,7 @@ class OAuthViewController: UIViewController, Identity
 {
     
     class func id()-> String {
-        return String(OAuthViewController)
+        return "OAuthViewController"
     }
 
     override func viewDidLoad() {
@@ -24,7 +24,7 @@ class OAuthViewController: UIViewController, Identity
     }
 
     @IBAction func githubAuthorization(sender: AnyObject) {
-        GithubOAuth.shared.oAuthRequestWithScope("user,repo")
+        GithubOAuth.shared.oAuthRequestWithScope("email,user,repo")
     }
     
     

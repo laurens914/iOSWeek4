@@ -59,6 +59,7 @@ class GithubOAuth
                             case .Keychain: self.saveAccessTokenToKeychain(token)
                             case .UserDefaults: self.saveAccessTokenToUser(token)
                             }
+                            completion(success: true)
                         })
                     }
                 } catch _ {completion (success:false)}
@@ -72,7 +73,7 @@ class GithubOAuth
     {
         var accessToken:String?
         if let token = self.accessTokenFromUserDefaults(){ accessToken = token }
-        if let token = self.accessTokenFromKeychain() {accessToken = token}
+//        if let token = self.accessTokenFromKeychain() {accessToken = token}
         guard let token = accessToken else {
                 throw GithubOAuthError.MissingAccessToken ( "missing access token") }
         return token
@@ -126,7 +127,7 @@ class GithubOAuth
                 }
             }
         }
-        return kEmptyString
+        return nil 
     }
     
     private func getKeychainQuery(query: String) -> [String: AnyObject]
