@@ -14,6 +14,12 @@ class UserRepoListViewController: UIViewController, Identity
     @IBOutlet weak var ownerRepoTableView: UITableView!
     @IBOutlet weak var repoOwnerImage: UIImageView!
     
+
+    
+    @IBAction func backButtonPressed(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     var selectedRepo:Repo?
     
     var userRepoArray = [Repo](){

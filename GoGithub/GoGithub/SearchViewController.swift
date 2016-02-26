@@ -30,6 +30,13 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
         }
     }
     
+    func scrollViewDidScroll(scrollView: UIScrollView)
+    {
+        if self.searchBar.isFirstResponder() {
+            self.searchBar.resignFirstResponder()
+        }
+    }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let searchRepoCell = self.searchTableView.dequeueReusableCellWithIdentifier("SearchRepoCell", forIndexPath: indexPath)
         let searchRow = self.searchArray[indexPath.row]

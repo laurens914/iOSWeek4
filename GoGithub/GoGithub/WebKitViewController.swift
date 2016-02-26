@@ -12,13 +12,15 @@ import WebKit
 class WebKitViewController: UIViewController, Identity {
     
     var username: String?
+    var doneButtonBuffer : CGFloat = 50.0
     
+    @IBAction func doneButton(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
     var owner: Owner? {
         didSet{
             if let owner = owner {
                 print(owner.profileLink)
-                
-            self.username = owner.username
             }
         }
     }
@@ -40,7 +42,8 @@ class WebKitViewController: UIViewController, Identity {
         if let owner = owner {
             let url = NSURL(string:owner.profileLink)
             let request = NSMutableURLRequest(URL: url!)
-            let webView = WKWebView(frame: self.view.frame)
+            let frame = CGRect(x: 0.0, y: doneButtonBuffer, width: self.view.frame.width, height: self.view.frame.height-doneButtonBuffer)
+            let webView = WKWebView(frame: frame)
             self.view.addSubview(webView)
             webView.loadRequest(request)
         }
