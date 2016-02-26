@@ -14,6 +14,12 @@
 		8921C9021C7B701C00D270CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8921C9001C7B701C00D270CF /* LaunchScreen.storyboard */; };
 		8921C90D1C7B701C00D270CF /* GoGithubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8921C90C1C7B701C00D270CF /* GoGithubTests.swift */; };
 		8921C9181C7B9DC300D270CF /* GithubOAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8921C9171C7B9DC300D270CF /* GithubOAuth.swift */; };
+		899BDC4E1C7F98DA003580E8 /* UserSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BDC4D1C7F98DA003580E8 /* UserSearchViewController.swift */; };
+		899BDC501C7F9D37003580E8 /* UserImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BDC4F1C7F9D37003580E8 /* UserImageCollectionViewCell.swift */; };
+		899BDC521C7F9E65003580E8 /* SearchUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BDC511C7F9E65003580E8 /* SearchUsers.swift */; };
+		899BDC541C7FB2B6003580E8 /* UserRepoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BDC531C7FB2B6003580E8 /* UserRepoListViewController.swift */; };
+		899BDC561C7FBEA3003580E8 /* UserRepos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BDC551C7FBEA3003580E8 /* UserRepos.swift */; };
+		899BDC581C7FD476003580E8 /* WebKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BDC571C7FD476003580E8 /* WebKitViewController.swift */; };
 		89F5F99B1C7CF01F00D0EE36 /* Identity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F5F99A1C7CF01F00D0EE36 /* Identity.swift */; };
 		89F5F9A01C7CF13D00D0EE36 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F5F99F1C7CF13D00D0EE36 /* HomeViewController.swift */; };
 		89F5F9A21C7CF21400D0EE36 /* Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F5F9A11C7CF21400D0EE36 /* Setup.swift */; };
@@ -55,6 +61,12 @@
 		8921C90C1C7B701C00D270CF /* GoGithubTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoGithubTests.swift; sourceTree = "<group>"; };
 		8921C90E1C7B701C00D270CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8921C9171C7B9DC300D270CF /* GithubOAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubOAuth.swift; sourceTree = "<group>"; };
+		899BDC4D1C7F98DA003580E8 /* UserSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSearchViewController.swift; sourceTree = "<group>"; };
+		899BDC4F1C7F9D37003580E8 /* UserImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		899BDC511C7F9E65003580E8 /* SearchUsers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchUsers.swift; sourceTree = "<group>"; };
+		899BDC531C7FB2B6003580E8 /* UserRepoListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRepoListViewController.swift; sourceTree = "<group>"; };
+		899BDC551C7FBEA3003580E8 /* UserRepos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRepos.swift; sourceTree = "<group>"; };
+		899BDC571C7FD476003580E8 /* WebKitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebKitViewController.swift; sourceTree = "<group>"; };
 		89F5F99A1C7CF01F00D0EE36 /* Identity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Identity.swift; sourceTree = "<group>"; };
 		89F5F99F1C7CF13D00D0EE36 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		89F5F9A11C7CF21400D0EE36 /* Setup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Setup.swift; sourceTree = "<group>"; };
@@ -138,6 +150,7 @@
 				8921C8FB1C7B701C00D270CF /* Main.storyboard */,
 				8921C8FE1C7B701C00D270CF /* Assets.xcassets */,
 				8921C9001C7B701C00D270CF /* LaunchScreen.storyboard */,
+				899BDC4F1C7F9D37003580E8 /* UserImageCollectionViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -150,6 +163,9 @@
 				89F5F9D01C7E553700D0EE36 /* ProfileViewController.swift */,
 				89F5F9D21C7E554A00D0EE36 /* SearchViewController.swift */,
 				89F5F9D81C7E970A00D0EE36 /* AddRepoViewController.swift */,
+				899BDC4D1C7F98DA003580E8 /* UserSearchViewController.swift */,
+				899BDC531C7FB2B6003580E8 /* UserRepoListViewController.swift */,
+				899BDC571C7FD476003580E8 /* WebKitViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -183,6 +199,8 @@
 				89F5F9CE1C7D36F800D0EE36 /* CurrentUserRequest.swift */,
 				89F5F9D41C7E7E0300D0EE36 /* AddRepo.swift */,
 				89F5F9D61C7E826300D0EE36 /* SearchAPI.swift */,
+				899BDC511C7F9E65003580E8 /* SearchUsers.swift */,
+				899BDC551C7FBEA3003580E8 /* UserRepos.swift */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -305,6 +323,7 @@
 				89F5F9A01C7CF13D00D0EE36 /* HomeViewController.swift in Sources */,
 				89F5F9D31C7E554A00D0EE36 /* SearchViewController.swift in Sources */,
 				89F5F9AB1C7CFA9400D0EE36 /* Additions.swift in Sources */,
+				899BDC541C7FB2B6003580E8 /* UserRepoListViewController.swift in Sources */,
 				89F5F9D71C7E826300D0EE36 /* SearchAPI.swift in Sources */,
 				89F5F9A21C7CF21400D0EE36 /* Setup.swift in Sources */,
 				8921C8FA1C7B701C00D270CF /* OAuthViewController.swift in Sources */,
@@ -312,12 +331,17 @@
 				8921C8F81C7B701C00D270CF /* AppDelegate.swift in Sources */,
 				8921C9181C7B9DC300D270CF /* GithubOAuth.swift in Sources */,
 				89F5F9B01C7CFDF000D0EE36 /* ModelAdditions.swift in Sources */,
+				899BDC581C7FD476003580E8 /* WebKitViewController.swift in Sources */,
 				89F5F9A91C7CF95A00D0EE36 /* GetRepoRequest.swift in Sources */,
 				89F5F99B1C7CF01F00D0EE36 /* Identity.swift in Sources */,
 				89F5F9A71C7CF7D500D0EE36 /* APIRequest.swift in Sources */,
+				899BDC4E1C7F98DA003580E8 /* UserSearchViewController.swift in Sources */,
+				899BDC501C7F9D37003580E8 /* UserImageCollectionViewCell.swift in Sources */,
 				89F5F9CF1C7D36F800D0EE36 /* CurrentUserRequest.swift in Sources */,
 				89F5F9CD1C7D366200D0EE36 /* CurrentUser.swift in Sources */,
+				899BDC561C7FBEA3003580E8 /* UserRepos.swift in Sources */,
 				89F5F9A41C7CF4D000D0EE36 /* API.swift in Sources */,
+				899BDC521C7F9E65003580E8 /* SearchUsers.swift in Sources */,
 				89F5F9D51C7E7E0300D0EE36 /* AddRepo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

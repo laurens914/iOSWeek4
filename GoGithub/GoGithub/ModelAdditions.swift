@@ -23,7 +23,8 @@ extension Repo
                 let ownerName = eachRepo["owner"]?["login"] as? String ?? kEmptyString
                 let ownerProfileLink = eachRepo["owner"]?["html_url"] as? String ?? kEmptyString
                 let ownerRepoLink = eachRepo["owner"]?["repos_url"] as? String ?? kEmptyString
-                let owner = Owner(name: ownerName, linkToRepos: ownerRepoLink, profileLink: ownerProfileLink)
+                 let ownerProfileImage = eachRepo["owner"]?["avatar_url"] as? String ?? kEmptyString
+                let owner = Owner(name: name,linkToRepos: ownerRepoLink, profileLink: ownerProfileLink, profileImage: ownerProfileImage, username: ownerName)
                 repos.append(Repo(name: name, owner: owner, desc: desc))
             }
             NSOperationQueue.mainQueue().addOperationWithBlock{ completion(success: true, repos: repos)}
@@ -41,7 +42,48 @@ extension Repo
                 let ownerName = eachRepo["owner"]?["login"] as? String ?? kEmptyString
                 let ownerProfileLink = eachRepo["owner"]?["html_url"] as? String ?? kEmptyString
                 let ownerRepoLink = eachRepo["owner"]?["repos_url"] as? String ?? kEmptyString
-                let owner = Owner(name: ownerName, linkToRepos: ownerRepoLink, profileLink: ownerProfileLink)
+                let ownerProfileImage = eachRepo["owner"]?["avatar_url"] as? String ?? kEmptyString
+                let owner = Owner(name: name, linkToRepos: ownerRepoLink, profileLink: ownerProfileLink, profileImage: ownerProfileImage, username: ownerName)
+                repos.append(Repo(name: name, owner: owner, desc: desc))
+            }
+            NSOperationQueue.mainQueue().addOperationWithBlock{ completion(success: true, repos: repos)}
+        }
+    }
+}
+extension Owner
+{
+class func searchGitHubUsers(searchResults: String, completion:(success:Bool, owner:[Owner]) ->())
+{
+    API.shared.enqueue(UserSearch(searchTerm: searchResults)) { (success, json) -> () in
+        var owner = [Owner]()
+        
+        for user in json {
+                      
+            let ownerUsername = user["login"] as? String ?? kEmptyString
+            let ownerProfileLink = user["html_url"] as? String ?? kEmptyString
+            let ownerRepoLink = user["repos_url"] as? String ?? kEmptyString
+            let ownerProfileImage = user["avatar_url"] as? String ?? kEmptyString
+            let ownerName = user["name"] as? String ?? kEmptyString
+            owner.append(Owner(name: ownerName,linkToRepos: ownerRepoLink, profileLink: ownerProfileLink, profileImage: ownerProfileImage, username: ownerUsername ))
+        }
+        NSOperationQueue.mainQueue().addOperationWithBlock{ completion(success: true, owner: owner)}
+    }
+}
+    class func githubUserRepos(username: String, completion:(success:Bool, repos:[Repo]) -> ())
+    {
+        API.shared.enqueue(UserRepo(username: username)) { (success, json) -> () in
+            
+            var repos = [Repo]()
+            print(json)
+            for eachRepo in json {
+                let name = eachRepo["name"] as? String ?? kEmptyString
+                let desc = eachRepo["description"] as? String ?? kEmptyString
+                
+                let ownerName = eachRepo["owner"]?["login"] as? String ?? kEmptyString
+                let ownerProfileLink = eachRepo["owner"]?["html_url"] as? String ?? kEmptyString
+                let ownerRepoLink = eachRepo["owner"]?["repos_url"] as? String ?? kEmptyString
+                let ownerProfileImage = eachRepo["owner"]?["avatar_url"] as? String ?? kEmptyString
+                let owner = Owner(name: name,linkToRepos: ownerRepoLink, profileLink: ownerProfileLink, profileImage: ownerProfileImage, username: ownerName)
                 repos.append(Repo(name: name, owner: owner, desc: desc))
             }
             NSOperationQueue.mainQueue().addOperationWithBlock{ completion(success: true, repos: repos)}

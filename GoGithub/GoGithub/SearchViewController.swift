@@ -12,6 +12,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
 {
 
     @IBOutlet weak var searchTableView: UITableView!
+    
     var searchArray = [Repo](){
         didSet
         {
